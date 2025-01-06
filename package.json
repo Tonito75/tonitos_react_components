@@ -1,8 +1,8 @@
 {
   "name": "tonitos_react_components",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "main": "src/components/index.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
