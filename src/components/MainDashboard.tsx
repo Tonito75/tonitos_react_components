@@ -35,7 +35,7 @@ export interface DrawerButton {
   icon? : React.ReactNode;
 }
 
-export const MainLayout = ({children,title,enableDrawer,buttonSelected, content, logouthref,getusername}: MainLayoutProps) => {
+export const tonito_Dashboard = ({children,title,enableDrawer,buttonSelected, content, logouthref,getusername}: MainLayoutProps) => {
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -115,4 +115,4 @@ export const MainLayout = ({children,title,enableDrawer,buttonSelected, content,
   );
 }
 
-export default MainLayout;
+export default tonito_Dashboard;
