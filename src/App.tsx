@@ -1,6 +1,7 @@
 import { Dashboard, Logout } from '@mui/icons-material'
 import './App.css'
-import MainLayout, { DrawerButton, DrawerHr, DrawerTypo } from './components/MainDashboard'
+import MainLayout from './components/dashboard/MainDashboard'
+import { DrawerButton, DrawerHr, DrawerTypo } from './components/dashboard/dashboardTypes'
 
 /**
  * The content read by the MainLayout component.

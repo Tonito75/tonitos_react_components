@@ -4,38 +4,10 @@ import Typography from '@mui/material/Typography';
 import { AppBar, Button, Drawer, IconButton, Stack, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Logout} from '@mui/icons-material';
+import { DashboardProps } from './dashboardTypes';
 
 
-export interface MainLayoutProps {
-  children?: React.ReactNode;
-  title: string;
-  enableDrawer:boolean;
-  buttonSelected: string;
-
-  content: Array<DrawerHr | DrawerTypo | DrawerButton>;
-
-  logouthref: string;
-  getusername: () => Promise<string | undefined>;
-}
-
-export interface DrawerHr {
-  type: 'hr';
-}
-
-export interface DrawerTypo {
-  type: 'typo',
-  text: string,
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-}
-
-export interface DrawerButton {
-  type: 'button',
-  text: string,
-  href: string,
-  icon? : React.ReactNode;
-}
-
-export const tonito_Dashboard = ({children,title,enableDrawer,buttonSelected, content, logouthref,getusername}: MainLayoutProps) => {
+export const Dashboard = ({children,title,enableDrawer,buttonSelected,content,logouthref,getusername}: DashboardProps) => {
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -92,12 +64,15 @@ export const tonito_Dashboard = ({children,title,enableDrawer,buttonSelected, co
                 {
                   content.map((item) => (
                     <>
+                      {/* Buttons */}
                       {item.type === 'button' && 
                         <Button variant={buttonSelected.toLocaleUpperCase() === item.text.toLocaleUpperCase() ? 'outlined' : 'text'} startIcon={item.icon} href={item.href} type='button' size='large'>{item.text}</Button>
                       }
+                      {/* Hr */}
                       {item.type === 'hr' &&
                         <hr style={{width:'100%'}} />
                       }
+                      {/* Text */}
                       {item.type === 'typo' && 
                         <Typography variant={item.variant} component="div" >{item.text}</Typography>
                       }
@@ -115,4 +90,4 @@ export const tonito_Dashboard = ({children,title,enableDrawer,buttonSelected, co
   );
 }
 
-export default tonito_Dashboard;
+export default Dashboard;
