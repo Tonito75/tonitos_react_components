@@ -1,1 +1,1 @@
-export {default as tonito_Dashboard} from './MainDashboard';
+export {default as Tonito_Dashboard} from './MainDashboard';
