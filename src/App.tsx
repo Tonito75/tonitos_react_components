@@ -49,7 +49,7 @@ function App() {
         enableDrawer={true}
         logouthref='/login'
         buttonSelected='dashboard'
-        getusername={ async () => new Promise(() => {return 'coucou'})}
+        getusername={ async () => new Promise(() => {return ' aaaaa'})}
       />
     </>
   )

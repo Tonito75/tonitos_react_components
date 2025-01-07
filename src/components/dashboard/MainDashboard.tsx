@@ -61,6 +61,9 @@ export const Dashboard = ({children,title,enableDrawer,buttonSelected,content,lo
 
               {/* Drawer content here. Reads content and create components. */}
               <Stack spacing={2} sx={{width:'100%',padding:'15px',justifyContent: "center",alignItems: "flex-start",}}>
+                { userName !== undefined && enableDrawer == true &&
+                  <Typography variant='h6' component="div" >Welcome {userName}</Typography>
+                }
                 {
                   content.map((item) => (
                     <>
