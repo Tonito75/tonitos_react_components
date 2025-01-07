@@ -10,6 +10,7 @@ export interface MainLayoutProps {
   children?: React.ReactNode;
   title: string;
   enableDrawer:boolean;
+  buttonSelected: string;
 
   content: Array<DrawerHr | DrawerTypo | DrawerButton>;
 
@@ -24,7 +25,7 @@ export interface DrawerHr {
 export interface DrawerTypo {
   type: 'typo',
   text: string,
-  variant: 'h1' | 'h2' |'h3' |'h4' |'h5' |'h6'
+  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
 export interface DrawerButton {
@@ -34,7 +35,7 @@ export interface DrawerButton {
   icon? : React.ReactNode;
 }
 
-export const MainLayout = ({children,title,enableDrawer, content, logouthref,getusername}: MainLayoutProps) => {
+export const MainLayout = ({children,title,enableDrawer,buttonSelected, content, logouthref,getusername}: MainLayoutProps) => {
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -92,7 +93,7 @@ export const MainLayout = ({children,title,enableDrawer, content, logouthref,get
                   content.map((item) => (
                     <>
                       {item.type === 'button' && 
-                        <Button startIcon={item.icon} href={item.href} size='large'>{item.text}</Button>
+                        <Button variant={buttonSelected.toLocaleUpperCase() === item.text.toLocaleUpperCase() ? 'outlined' : 'text'} startIcon={item.icon} href={item.href} type='button' size='large'>{item.text}</Button>
                       }
                       {item.type === 'hr' &&
                         <hr style={{width:'100%'}} />

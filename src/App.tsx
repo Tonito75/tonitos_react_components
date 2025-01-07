@@ -18,6 +18,12 @@ const content: Array<DrawerHr | DrawerTypo | DrawerButton> = [
     icon : <Dashboard />
   },
   {
+    type:'button',
+    text: 'Logout',
+    href: '/login',
+    icon : <Logout />
+  },
+  {
     type: 'hr'
   },
   {
@@ -41,6 +47,7 @@ function App() {
         title='coucou'
         enableDrawer={true}
         logouthref='/login'
+        buttonSelected='dashboard'
         getusername={ async () => new Promise(() => {return 'coucou'})}
       />
     </>
