@@ -6,7 +6,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {Logout} from '@mui/icons-material';
 import { DashboardProps } from './dashboardTypes';
 
-
 export const Dashboard = ({children,title,enableDrawer,buttonSelected,content,logouthref,getusername}: DashboardProps) => {
 
   const theme = useTheme();
